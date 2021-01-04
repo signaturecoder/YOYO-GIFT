@@ -1,0 +1,127 @@
+11/11/2019
+
+--301--
+
+1. Library : flux, redux , context-api, Mobex ,
+2. Report-generation :  Light-house
+3. Lexical-scope
+4. Execution Scope
+5. Closures
+6. Stack Memory , Stack Frame , Heap Memory, Event Loop
+7. how this.setState work ?
+8. batch-chin
+9. css has also some model like dom known as css object model.
+10. rendering object and this rendering objects are taking by v8 engine to paint it and show the view.
+11. Rellay - it is a client for graphQl
+12. Apolloclient - client for graphQl in react ( frontend )
+13. pwa using react
+
+** overeacted.io
+
+1. why props is immutable ? state is mutable ?
+--> because if it is mutable, it is difficult to find bug.
+
+setState - asynchronous in nature
+
+////////// Hooks ///////  13-11-2019
+1. coverting class to functional components
+2. No need of binding of arrow functions in class based components because of closures.
+3. useState is a function which return two values - a. get the data b. update the data
+4. In react hooks, useState is not calling inside some loop or conditions.. It should be at top of root lexical scope.
+	e.g = name = sanu;
+		if(name === 'sanu') {
+			const [count, setCount] = useState(0);
+		} // this is wrong.
+
+
+5. useEffect -> useEffect act as componentDidUpdate if you do not pass empty array as second argument.
+				so, pass an empty array so it behave as componentDidMount
+				and to destroy or unsubscribe from that effect , you need to return 'something'.
+				passing count in empty array meaning if count change , only then useEffect run. // componentShouldUpdate
+				
+				const [count, setCount] = useState(0);
+				
+				useEffect(() => {
+				console.log('running')}, []);
+				
+				useEffect(() => {
+				console.log('running')}, [count]);  // it behaves as componentShouldUpdate.
+				
+6. componentShouldUpdate : takes two parameter ( prevState, currentState ) - it will stop rendering components
+
+14/11/2019
+
+************ REDUX ***********************
+1. Why Redux ?  --> comunicate between multiple components
+2. Difference bwt redux and flux.
+3. Circular dependency 
+4. React has its own state management - context-api
+--> which has two parts .. consumer and provider
+
+** Put your absolute and relative imports top and bottom approch. and have a space bwteen them.
+
+1. Quick start with redux - 
+a. npm install react-redux
+b. Provider -> Give Provider at the root of the application i.e index.js . It will provide store to the application.
+   Keep your provider outside the render so that it doesn't become clumsy.
+c. Store -> Provider need store as a prop to your application.
+d. Connect -> Connect function connect your component to store. Wherever you need the communication bwtween store and components,
+			you need to connect that component.
+  Takes two parameter -
+  mapStateToProps  = pass state to props
+  mapDispatchToProps = pass functions to props
+  Why Only Props ? --> Because props is immutable.
+  Everything is props only in redux.
+ e. Create redux folder structure which has actions, reducers, configureStore
+     actions : 
+f. redux-thunk is an asynchrounous call. 
+
+
+15/11/2019
+
+
+****** Reusability ***********
+1. Statefull and Stateless Reusability
+2. First : Higher Order Components
+-> a. custom jsx 
+	b. Create Hoc.js 
+Curring :
+const addition = (a)=> (b)=> a+b
+addition(2)(3)
+
+takes a component as argument and and it return another component. (Keep logic / functionality at one file ) and 
+share this logic to different component.
+
+const Hoc = (counter) => {
+return some compo
+
+
+
+
+2. Render Props : passing functions as props to child component.  ( Render props functionality should be in parent component )
+
+** passing reference of functions or calling functions --> if you pass reference then it acts as asynchronous call or on Click some button. e.g : 
+3. Custom hooks
+ 
+
+
+1. ui views 
+2. validation in email
+3. material ui
+4. pwa (...) 3 steps
+5. role based authorization
+6. outh..
+7. Light house report - eslint , prettier
+8. unit testing zest and enzyme
+9. webpack by default
+10 . folder structure
+11. tools for debudding - redux or chrome tools
+
+1. linting and prettier "double quotes", 
+env.
+
+17/11/2019 : 
+
+1. Proper routing done - Learned sending props to routing
+2. Custom hooks        - used custom hooks in validation
+3. 
